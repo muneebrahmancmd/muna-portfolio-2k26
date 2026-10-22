@@ -1,0 +1,142 @@
+.scattered {
+	display: none;
+	grid-template-columns: repeat(24, 1fr);
+	grid-template-rows: minmax(0, 50px) repeat(4, minmax(180px, 1fr));
+
+	height: 100dvh;
+
+	padding: min(max(var(--spacing-xs), 1vw), var(--spacing-sm));
+
+	position: sticky;
+	top: 0;
+
+	background: var(--white);
+}
+
+.scattered-images {
+	position: relative;
+}
+
+.scattered div:not(:nth-child(8)) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.scattered-one {
+	grid-row: 2;
+	grid-column: 1 / span 3;
+	width: 110%;
+}
+
+.scattered-two {
+	grid-row: 2;
+	grid-column: 11 / span 3;
+	top: 100px;
+}
+
+.scattered-three {
+	grid-row: 2 / span 2;
+	grid-column: 22 / span 3;
+	justify-self: end;
+}
+
+.scattered-four {
+	grid-row: 4;
+	grid-column: 2 / span 3;
+	top: -100px;
+	left: 150px;
+}
+
+.scattered-five {
+	grid-row: 4;
+	grid-column: 15 / span 4;
+	left: 150px;
+	top: -50px;
+}
+
+.scattered-six {
+	grid-row: 5;
+	grid-column: 11 / span 4;
+	top: -60px;
+	right: 20px;
+}
+
+.scattered-seven {
+	grid-row: 5;
+	grid-column: 23 / span 2;
+	top: -40px;
+	justify-self: end;
+}
+
+.scattered-eight {
+	display: flex;
+	flex-direction: column;
+	grid-row: 5;
+	grid-column: 1 / span 7;
+	align-self: end;
+}
+
+.scattered-nine {
+	grid-row: 5;
+	grid-column: 12 / span 6;
+	align-self: end;
+}
+
+.scattered-images::selection {
+	background: var(--black);
+	color: var(--white);
+}
+
+.scattered-images picture::selection {
+	background: transparent;
+}
+
+@media (width <= 750px) {
+	.scattered-six,
+	.scattered-seven,
+	.scattered-eight {
+		display: none !important;
+	}
+
+	.scattered-one {
+		top: -8px;
+		grid-column: 5 / span 11;
+	}
+
+	.scattered-two {
+		grid-column: 18 / span 10;
+		top: 160px;
+		justify-self: end;
+	}
+
+	.scattered-three {
+		justify-self: initial;
+		grid-column: 1 / span 12;
+		grid-row: 3;
+	}
+
+	.scattered-four {
+		grid-column: 18 / span 10;
+		grid-row: 4;
+		top: 0;
+		left: 0;
+		justify-self: end;
+	}
+
+	.scattered-five {
+		top: -30px;
+		grid-row: 5;
+		grid-column: 5 / span 12;
+		left: 0;
+	}
+
+	.scattered-nine {
+		grid-column: 1/-1;
+		text-align: center;
+	}
+
+	.scattered {
+		height: 100vh;
+	}
+}

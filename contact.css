@@ -1,0 +1,165 @@
+#contact {
+	background: var(--orange);
+
+	height: 100dvh;
+
+	display: none;
+
+	grid-template-rows: 1fr 1fr;
+	gap: min(max(var(--spacing-xs), 1vw), var(--spacing-sm));
+
+	padding: min(max(var(--spacing-xs), 1vw), var(--spacing-sm));
+
+	position: sticky;
+	top: 0;
+}
+
+.contact-upper {
+	padding-top: var(--spacing-xl);
+
+	font-size: clamp(var(--text-normal), 8vw, var(--text-xl));
+	font-family: var(--family-main);
+	line-height: var(--height-sm);
+
+	display: flex;
+	flex-direction: column;
+
+	user-select: none;
+}
+
+.white {
+	color: var(--white);
+}
+
+.contact-lower {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: end;
+	justify-items: center;
+}
+
+.contact-lower::selection {
+	background: var(--black);
+	color: var(--orange);
+}
+
+.contact-date {
+	font-size: clamp(var(--text-normal), 15vw, var(--text-xl));
+	font-family: var(--family-main);
+	line-height: var(--height-sm);
+
+	margin-right: auto;
+	overflow: hidden;
+
+	padding-bottom: 5px;
+}
+
+.contact-socials {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: var(--spacing-xs);
+
+	width: 60%;
+	height: 100%;
+
+	margin-left: auto;
+}
+
+.flex-spacing {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-lg);
+}
+
+.back-top {
+	margin-top: var(--spacing-2xl);
+	cursor: pointer;
+}
+
+.contact-lower__image {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+
+	margin-left: auto;
+}
+
+.contact-image-bg {
+	background: var(--white);
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.contact-image {
+	aspect-ratio: 1/1.5;
+	object-fit: cover;
+	object-position: center;
+}
+
+.contact-image-bg::selection {
+	background: transparent;
+}
+
+.contact-lower__image div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact-header,
+.contact-socials,
+.contact-image,
+.contact-mobile {
+	opacity: 0;
+}
+
+.mobile {
+	display: none;
+}
+
+@media (width <= 1250px) {
+	.contact-lower {
+		grid-template-columns: 1fr 1fr;
+		position: relative;
+	}
+
+	.contact-date {
+		display: flex;
+		grid-row: 2;
+	}
+
+	.contact-lower__image {
+		grid-row: 2;
+	}
+
+	.contact-socials {
+		grid-column: 1/-1;
+		margin: auto;
+	}
+
+	.back-top {
+		position: absolute;
+		left: 0;
+		bottom: 170px;
+	}
+}
+
+@media (width <= 750px) {
+	#contact {
+		height: 100vh;
+		grid-template-rows: 1fr 2fr;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	.mobile {
+		display: flex;
+	}
+
+	.contact-socials {
+		height: 80%;
+	}
+}

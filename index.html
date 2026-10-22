@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	{{> title}}
+
+	<body>
+		<div class="mouse"></div>
+
+		{{> header }}
+
+		<div class="loading-wrapper">{{> loading}} {{> about}}</div>
+
+		{{> scattered}}
+
+		<div class="works-wrapper">
+			{{> works}}
+			<section class="projects-top"></section>
+		</div>
+
+		<section class="projects-middle"></section>
+		<section class="projects-bottom"></section>
+		{{> contact}}
+
+		<script type="module" src="index.js"></script>
+	</body>
+</html>
